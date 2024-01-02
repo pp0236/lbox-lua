@@ -98,6 +98,7 @@ callbacks.Register("Draw", "catt_render2", function()
 end)
 
 function fix_gc()
+	timer = nil
 	allowAcceptMatchInvite = true
 	print("oki !")
 end
