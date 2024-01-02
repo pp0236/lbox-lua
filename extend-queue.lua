@@ -96,3 +96,8 @@ callbacks.Register("Draw", "catt_render2", function()
 		draw.TextShadow(math.floor(config.x), math.floor(config.y), formatTime(diff))
 	end
 end)
+
+function fix_gc()
+	allowAcceptMatchInvite = true
+	print("oki !")
+end
