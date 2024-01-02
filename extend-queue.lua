@@ -58,9 +58,7 @@ callbacks.Register("GCRetrieveMessage", "catt_gc_recv2", function(typeID, data)
 		]]
 		if #data == 4 and type(data[0]) == "table" and #data[0] == 4 and type(data[2]) == "table"
 				and #data[2] == 2 and data[3] == nil then
-			print("match found")
-			-- print_tbl(data)
-			timer = globals.CurTime() + 160 --150
+			timer = globals.CurTime() + 160
 		end
 	end
 
