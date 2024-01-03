@@ -58,7 +58,7 @@ callbacks.Register("GCRetrieveMessage", "catt_gc_recv2", function(typeID, data)
 		]]
 		if #data == 4 and type(data[0]) == "table" and #data[0] == 4 and type(data[2]) == "table"
 				and #data[2] == 2 and data[3] == nil then
-			timer = globals.CurTime() + 160
+			timer = os.time() + 160
 		end
 	end
 
@@ -67,7 +67,7 @@ end)
 
 callbacks.Unregister("Draw", "catt_render2")
 callbacks.Register("Draw", "catt_render2", function()
-	if join and join - globals.CurTime() <= 0 then
+	if join and join - os.time() <= 0 then
 		join = nil
 		gc.JoinMatchmakingMatch()
 	end
@@ -79,12 +79,12 @@ callbacks.Register("Draw", "catt_render2", function()
 
 			if gc.IsConnectedToMatchServer() then gc.AbandonMatch() end
 			gc.AcceptMatchInvites() -- i hate async
-			join = globals.CurTime() + 1
+			join = os.time() + 1
 
 			return
 		end
 
-		local diff = timer - globals.CurTime()
+		local diff = timer - os.time()
 		if diff <= 0 then
 			timer = nil
 			return
