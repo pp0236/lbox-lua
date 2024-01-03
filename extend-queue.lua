@@ -102,3 +102,8 @@ function fix_gc()
 	allowAcceptMatchInvite = true
 	print("oki !")
 end
+
+callbacks.Unregister("Unload", "catt_unload2")
+callbacks.Register("Unload", "catt_unload2", function()
+	fix_gc = nil
+end)
